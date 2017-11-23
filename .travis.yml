@@ -1,4 +1,4 @@
-language: c
+language: bash
 script: asdf plugin-test dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.git 'dotnet --version'
 before_script:
   - git clone https://github.com/asdf-vm/asdf.git asdf
