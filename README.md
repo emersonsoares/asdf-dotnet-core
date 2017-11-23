@@ -1,5 +1,7 @@
 # 🚧 asdf-dotnet-core
 
+[![Build Status](https://travis-ci.org/emersonsoares/asdf-dotnet-core.svg?branch=master)](https://travis-ci.org/emersonsoares/asdf-dotnet-core)
+
 .Net Core plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
 ## Install
