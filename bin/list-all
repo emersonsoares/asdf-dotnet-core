@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# releases_uri='https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases.json'
+
+# curl -s $releases_uri | jq -r '.[]."version-sdk"'
+
+echo "2.0 1.1 1.0"
