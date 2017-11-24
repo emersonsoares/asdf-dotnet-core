@@ -6,4 +6,6 @@ resolve_sdk_uri() {
     echo "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/2.0.3/dotnet-sdk-2.0.3-osx-x64.tar.gz"
 }
 
-$ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
+# echo $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
+
+echo 'hello world'
