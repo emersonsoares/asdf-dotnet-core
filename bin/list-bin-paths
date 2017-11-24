@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo . shared sdk/$ASDF_INSTALL_VERSION
+echo . shared
