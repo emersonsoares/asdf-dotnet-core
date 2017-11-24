@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+RELEASES_URI=https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases.json
+
+resolve_sdk_uri() {
+    echo "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/2.0.3/dotnet-sdk-2.0.3-osx-x64.tar.gz"
+}
+
+$ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
