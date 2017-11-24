@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
+chmod +X ./dotnet-install
 
 echo $(./dotnet-install --install-dir $ASDF_INSTALL_PATH --no-path --version $ASDF_INSTALL_VERSION)
