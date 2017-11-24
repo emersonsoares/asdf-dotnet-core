@@ -1,5 +1,24 @@
 #!/usr/bin/env bash
-# $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
-chmod +X ./dotnet-install
 
-echo $(./dotnet-install --install-dir $ASDF_INSTALL_PATH --no-path --version $ASDF_INSTALL_VERSION)
+# $ASDF_INSTALL_TYPE 
+# $ASDF_INSTALL_VERSION 
+# $ASDF_INSTALL_PATH
+
+DOWNLOADER=$(which curl)
+
+echo Downloading the CLI installer
+
+$DOWNLOADER https://dot.net/v1/dotnet-install.sh > "$ASDF_INSTALL_PATH/dotnet-install.sh"
+
+chmod +x "$ASDF_INSTALL_PATH/dotnet-install.sh"
+
+echo Installing the CLI requested version $ASDF_INSTALL_VERSION. Please wait, installation may take a few minutes.
+
+"$ASDF_INSTALL_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --version "$ASDF_INSTALL_VERSION" --no-path
+
+if [ $? -ne 0 ]
+then
+    echo Download of $ASDF_INSTALL_VERSION version of the CLI failed. Exiting now.
+    exit 0
+fi
+echo The CLI has been installed.
