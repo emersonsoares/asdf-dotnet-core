@@ -8,7 +8,7 @@ chmod +x "$ASDF_INSTALL_PATH/dotnet-install.sh"
 
 echo Installing the CLI requested version $ASDF_INSTALL_VERSION. Please wait, installation may take a few minutes.
 
-"$ASDF_INSTALL_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --version "$ASDF_INSTALL_VERSION"
+"$ASDF_INSTALL_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --version "$ASDF_INSTALL_VERSION" --no-path
 
 rm "$ASDF_INSTALL_PATH/dotnet-install.sh"
 
