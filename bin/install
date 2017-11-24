@@ -10,6 +10,8 @@ echo Installing the CLI requested version $ASDF_INSTALL_VERSION. Please wait, in
 
 "$ASDF_INSTALL_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --version "$ASDF_INSTALL_VERSION"
 
+rm "$ASDF_INSTALL_PATH/dotnet-install.sh"
+
 if [ $? -ne 0 ]
 then
     echo Download of $ASDF_INSTALL_VERSION version of the CLI failed. Exiting now.
