@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo . shared sdk/*
+echo . shared sdk/$ASDF_INSTALL_VERSION host/fxr/$ASDF_INSTALL_VERSION
