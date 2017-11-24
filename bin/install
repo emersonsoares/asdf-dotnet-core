@@ -4,10 +4,9 @@
 # $ASDF_INSTALL_VERSION 
 # $ASDF_INSTALL_PATH
 
-DOWNLOADER=$(which curl)
-
 echo Downloading the CLI installer
 
+DOWNLOADER=$(which curl)
 $DOWNLOADER https://dot.net/v1/dotnet-install.sh > "$ASDF_INSTALL_PATH/dotnet-install.sh"
 
 chmod +x "$ASDF_INSTALL_PATH/dotnet-install.sh"
