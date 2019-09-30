@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
-RELEASES_URI=https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases.json
+RELEASES_URI=https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases-index.json
+FILE="releases.json"
+KEY="release-version"
 
 download() {
     curl -s $RELEASES_URI
 }
 
-match_version_key() {
-    grep -Eo '\"version-sdk\": \".*\"'
+match_key() {
+    grep -Eo '"'$1'": \".*\"'
 }
 
 sanitize() {
-    sed -e 's/\"version-sdk\": \"//;s/\"//'
+    sed -e 's/"'$1'": \"//;s/\"//'
 }
 
-echo $(download | match_version_key | sanitize | sort)
+echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY | tac)
