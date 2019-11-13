@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 RELEASES_URI=https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases-index.json
-FILE="releases.json"
+RELEASES_FILE="releases.json"
 KEY="release-version"
 
 download() {
@@ -16,4 +16,4 @@ sanitize() {
     sed -e 's/"'$1'": \"//;s/\"//'
 }
 
-echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY | sort)
+echo $(download | match_key $RELEASES_FILE | sanitize $RELEASES_FILE | xargs curl -s | match_key $KEY | sanitize $KEY | sort)
