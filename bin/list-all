@@ -16,4 +16,12 @@ sanitize() {
     sed -e 's/"'$1'": \"//;s/\"//'
 }
 
-echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY | tail -r)
+gnutac() {
+    if hash tac 2>/dev/null; then
+        tac "$@"
+    else
+        tail -r "$@"
+    fi
+}
+
+echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY | gnutac)
