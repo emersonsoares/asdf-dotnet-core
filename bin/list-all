@@ -16,4 +16,4 @@ sanitize() {
     sed -e 's/"'$1'": \"//;s/\"//'
 }
 
-echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY | tail -r)
+echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY | sort)
