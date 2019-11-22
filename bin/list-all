@@ -2,7 +2,7 @@
 
 RELEASES_URI=https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases-index.json
 FILE="releases.json"
-KEY="release-version"
+KEY="latest-sdk"
 
 download() {
     curl -s $RELEASES_URI
