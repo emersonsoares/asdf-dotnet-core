@@ -1,0 +1,31 @@
+name: CI workflow
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  schedule:
+    - cron: "0 0 * * 5"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Install asdf
+        run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
+
+      - name: Install dotnet-core and print dotnet version
+        run: |
+          . $HOME/asdf/asdf.sh
+          asdf plugin-test dotnet-core $GITHUB_WORKSPACE 'dotnet --version'
