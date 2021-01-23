@@ -1,6 +1,6 @@
-# 🚧 asdf-dotnet-core
+# asdf-dotnet-core
 
-[![Build Status](https://travis-ci.org/emersonsoares/asdf-dotnet-core.svg?branch=master)](https://travis-ci.org/emersonsoares/asdf-dotnet-core)
+[![Main workflow](https://github.com/emersonsoares/asdf-dotnet-core/workflows/Main%20workflow/badge.svg?branch=master)](https://github.com/emersonsoares/asdf-dotnet-core/actions)
 
 .Net Core plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
@@ -12,9 +12,11 @@ asdf plugin-add dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.gi
 
 ## Use
 
-Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install & manage versions of .Net Core.
+Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to
+install & manage versions of .Net Core.
 
 ## DOTNET_ROOT
+
 To set DOTNET_ROOT in your shell's initialization add the following:
 
 `. ~/.asdf/plugins/dotnet/set-dotnet-home.bash`
