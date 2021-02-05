@@ -17,12 +17,12 @@ Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to 
 ## DOTNET_ROOT
 To set DOTNET_ROOT in your shell's initialization add the following:
 
-`. ~/.asdf/plugins/dotnet/set-dotnet-home.bash`
+`. ~/.asdf/plugins/dotnet-core/set-dotnet-home.bash`
 
 For zsh shell, instead use:
 
-`. ~/.asdf/plugins/dotnet/set-dotnet-home.zsh`
+`. ~/.asdf/plugins/dotnet-core/set-dotnet-home.zsh`
 
 For fish shell, instead use:
 
-`. ~/.asdf/plugins/dotnet/set-dotnet-home.fish`
+`. ~/.asdf/plugins/dotnet-core/set-dotnet-home.fish`
