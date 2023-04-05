@@ -21,3 +21,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Test
         uses: asdf-vm/actions/plugin-test@v2
+        with:
+          command: dotnet --version
