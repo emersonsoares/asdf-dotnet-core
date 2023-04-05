@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 RELEASES_URI=https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases-index.json
-FILE="releases.json"
-KEY="latest-sdk"
+RELEASE_FILE="releases.json"
+VERSION_KEY="latest-sdk"
 
 download() {
     curl -s $RELEASES_URI
@@ -24,4 +24,4 @@ gnutac() {
     fi
 }
 
-echo $(download | match_key $FILE | sanitize $FILE | xargs curl -s | match_key $KEY | sanitize $KEY | gnutac)
+echo $(download | match_key $RELEASE_FILE | sanitize $RELEASE_FILE | xargs curl -s | match_key $VERSION_KEY | sanitize $VERSION_KEY | gnutac)
