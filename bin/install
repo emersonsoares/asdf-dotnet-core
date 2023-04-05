@@ -8,14 +8,18 @@ DOWNLOADER=$(which curl)
 
 # ref: https://docs.microsoft.com/zh-cn/dotnet/core/tools/dotnet-install-script
 $DOWNLOADER -sSL https://dot.net/v1/dotnet-install.sh > "$ASDF_INSTALL_PATH/dotnet-install.sh"
+if [ $? -ne 0 ]
+then
+    echo Download of dotnet-install.sh version of the CLI failed. Exiting now.
+    exit 0
+fi
+trap "rm '$ASDF_INSTALL_PATH/dotnet-install.sh'" EXIT
 
 chmod +x "$ASDF_INSTALL_PATH/dotnet-install.sh"
 
 echo Installing the CLI requested version $ASDF_INSTALL_VERSION. Please wait, installation may take a few minutes.
 
-"$ASDF_INSTALL_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --channel Current --version "$ASDF_INSTALL_VERSION" --no-path
-
-rm "$ASDF_INSTALL_PATH/dotnet-install.sh"
+"$ASDF_INSTALL_PATH/dotnet-install.sh" --install-dir "$ASDF_INSTALL_PATH" --channel STS --version "$ASDF_INSTALL_VERSION" --no-path
 
 if [ $? -ne 0 ]
 then
