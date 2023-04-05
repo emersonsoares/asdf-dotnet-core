@@ -1,13 +1,13 @@
 # 🚧 asdf-dotnet-core
 
-[![Build Status](https://travis-ci.org/emersonsoares/asdf-dotnet-core.svg?branch=master)](https://travis-ci.org/emersonsoares/asdf-dotnet-core)
+[![Main](https://github.com/spike008t/asdf-dotnet-core/actions/workflows/main.yaml/badge.svg?branch=master)](https://github.com/spike008t/asdf-dotnet-core/actions/workflows/main.yaml)
 
 .Net Core plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
 ## Install
 
 ```
-asdf plugin-add dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.git
+asdf plugin-add dotnet-core https://github.com/spike008t/asdf-dotnet-core.git
 ```
 
 ## Use
