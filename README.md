@@ -1,6 +1,6 @@
 # 🚧 asdf-dotnet-core
 
-[![Main](https://github.com/spike008t/asdf-dotnet-core/actions/workflows/main.yaml/badge.svg?branch=master)](https://github.com/spike008t/asdf-dotnet-core/actions/workflows/main.yaml)
+[![Main](https://github.com/spike008t/asdf-dotnet-core/actions/workflows/main.yaml/badge.svg?branch=main)](https://github.com/spike008t/asdf-dotnet-core/actions/workflows/main.yaml)
 
 .Net Core plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
