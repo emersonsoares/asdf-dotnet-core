@@ -1,0 +1,23 @@
+name: Main
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+  # schedule:
+  #   - cron: 0 0 * * 5
+
+jobs:
+  plugin_test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Test
+        uses: asdf-vm/actions/plugin-test@v2
