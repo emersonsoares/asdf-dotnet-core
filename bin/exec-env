@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+asdf_update_dotnet_home() {
+  local dotnet_path
+  dotnet_path="$(rtx which dotnet 2> /dev/null  )"
+  if [[ -n "${dotnet_path}" ]]; then
+    export DOTNET_ROOT
+    DOTNET_ROOT="$(dirname "$(realpath "${dotnet_path}")")"
+  fi
+}
+
+prompt_command() {
+  asdf_update_dotnet_home
+}
+
+asdf_update_dotnet_home
